@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    privat24 (0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rake (10.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  privat24!
+  rake
