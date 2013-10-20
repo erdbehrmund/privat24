@@ -58,8 +58,8 @@ Next options are optional:
     string stored in the session, or whatever, but *it must be unique*.
 
         @privat24_request = Privat24::Request.new(
-          :amount => '999.99',
-          :order_id => '123', 
+          :amt => '999.99',
+          :order => '123',
           :details => 'Some Product',
           :ext_details => 'Very special product'
         )

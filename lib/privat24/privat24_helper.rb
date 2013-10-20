@@ -16,7 +16,7 @@ module Privat24
         result = hidden_field_tag(:amt, privat24_request.amount)+
             hidden_field_tag(:ccy, privat24_request.ccy)+
             hidden_field_tag(:merchant, privat24_request.merchant_id)+
-            hidden_field_tag(:order, privat24_request.order_id)+
+            hidden_field_tag(:order, privat24_request.order)+
             hidden_field_tag(:details, privat24_request.details)+
             hidden_field_tag(:ext_details, privat24_request.ext_details)+
             hidden_field_tag(:return_url, privat24_request.return_url)+

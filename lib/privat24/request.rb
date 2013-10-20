@@ -3,9 +3,9 @@ require 'privat24/base_operation'
 module Privat24
   class Request < BaseOperation
     # REQUIRED Amount of payment (Float), in :currency
-    attr_accessor :amount
+    attr_accessor :amt
     # REQUIRED Currency of payment - one of `Privat24::SUPPORTED_CURRENCIES`
-    attr_accessor :order_id
+    attr_accessor :order
     # RECOMMENDED Description to be displayed to the user
     attr_accessor :details
     # RECOMMENDED Extended details to be displayed to the user
@@ -22,8 +22,8 @@ module Privat24
       @details = options[:details]
       @ext_details = options[:ext_details]
 
-      @order_id = options[:order_id]
-      @amount = options[:amount]
+      @order = options[:order]
+      @amt = options[:amt]
       @ccy = options[:ccy]
 
       validate!
@@ -33,7 +33,7 @@ module Privat24
 
     def validate!
 
-      %w(merchant_id merchant_password ccy amount order_id return_url status_url details ext_details).each do |required_field|
+      %w(merchant_id merchant_password ccy amt order return_url status_url details ext_details).each do |required_field|
         raise Privat24::Exception.new(required_field + ' is a required field') unless self.send(required_field).to_s != ''
       end
 
