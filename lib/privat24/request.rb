@@ -40,12 +40,12 @@ module Privat24
       raise Privat24::Exception.new('currency must be one of '+Privat24::SUPPORTED_CURRENCIES.join(', ')) unless Privat24::SUPPORTED_CURRENCIES.include?(ccy)
 
       begin
-        self.amount = Float(self.amount)
+        self.amt = Float(self.amt)
       rescue ArgumentError, TypeError
         raise Privat24::Exception.new('amount must be a number')
       end
 
-      raise Privat24::Exception.new('amount must be more than 0.01') unless amount > 0.01
+      raise Privat24::Exception.new('amount must be more than 0.01') unless amt > 0.01
     end
   end
 end
