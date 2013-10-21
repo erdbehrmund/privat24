@@ -13,7 +13,7 @@ module Privat24
       id = options.fetch(:id, 'p24_form')
       title = options.fetch(:title, 'Pay with Privat24')
       content_tag(:form, :id => id, :action => Privat24::ENDPOINT_URL, :method => :post) do
-        result = hidden_field_tag(:amt, privat24_request.amount)+
+        result = hidden_field_tag(:amt, privat24_request.amt)+
             hidden_field_tag(:ccy, privat24_request.ccy)+
             hidden_field_tag(:merchant, privat24_request.merchant_id)+
             hidden_field_tag(:order, privat24_request.order)+
