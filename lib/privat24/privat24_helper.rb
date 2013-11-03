@@ -20,8 +20,8 @@ module Privat24
             hidden_field_tag(:details, privat24_request.details)+
             hidden_field_tag(:ext_details, privat24_request.ext_details)+
             hidden_field_tag(:return_url, privat24_request.return_url)+
-            hidden_field_tag(:status_url, privat24_request.status_url)+
-            hidden_field_tag(:pay_way, 'privat24');
+            hidden_field_tag(:server_url, privat24_request.status_url)+
+            hidden_field_tag(:pay_way, 'privat24')
         if block_given?
           result += capture(&block)
         else
